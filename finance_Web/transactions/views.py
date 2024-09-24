@@ -6,9 +6,8 @@ from .models import Transaction
 
 
 @login_required
-def dashboard(request):
-    # 대시보드 로직
-    return render(request, 'transactions/dashboard.html')
+def home(request):
+    return render(request, 'transactions/home.html')
 
 class TransactionListView(LoginRequiredMixin, ListView):
     model = Transaction

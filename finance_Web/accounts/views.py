@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth import login
-from .forms import SighupForm
+from .forms import SignupForm
 from django.contrib.auth import views as auth_views
 from django.contrib import messages
 
@@ -8,12 +8,13 @@ from django.contrib import messages
 def signup(request):
     if request.method == 'POST':
         form = SignupForm(request.POST)
-        if form.is_valid():
+        if form.is_valid():  # 폼이 유효한지 확인
             user = form.save()
-            login(request, user)    # 회원가입 후 자동 로그인
-            messages.success(request, '회원가입이 완료되었습니다.')
-            return redirect('dashboard')    # 로그인 후 이동할 페이지
+            login(request, user)
+            return redirect('dashboard')  # 회원가입 후 대시보드로 리디렉션
+        else:
+            # 폼에 오류가 있을 경우, 에러와 함께 폼을 다시 보여줍니다.
+            return render(request, 'accounts/signup.html', {'form': form})
     else:
         form = SignupForm()
     return render(request, 'accounts/signup.html', {'form': form})
-

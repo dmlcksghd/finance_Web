@@ -20,5 +20,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),    # accounts 입의 URL 포함
-    path('', include('transaction.urls')),
+    path('', include('transactions.urls')),
 ]
