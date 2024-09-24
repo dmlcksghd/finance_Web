@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth import login
 from .forms import SighupForm
-
+from django.contrib.auth import views as auth_views
 
 def signup(request):
     if request.method == 'POST':
@@ -13,3 +13,4 @@ def signup(request):
     else:
         form = SignupForm()
     return render(request, 'accounts/signup.html', {'form': form})
+
