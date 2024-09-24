@@ -3,6 +3,7 @@ from django.contrib.auth import login
 from .forms import SignupForm
 from django.contrib.auth import views as auth_views
 from django.contrib import messages
+from django.contrib.auth.forms import UserCreationForm
 
 
 def signup(request):

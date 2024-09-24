@@ -126,5 +126,5 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/'  # 로그인 후 이동할 URL의 name
-LOGOUT_REDIRECT_URL = 'login'     # 로그아웃 후 이동할 URL의 name
-LOGIN_URL = '/accounts/login/'  # 로그인 페이지 경로
+LOGOUT_REDIRECT_URL = '/'     # 로그아웃 후 이동할 URL의 name
+LOGIN_URL = '/'  # 로그인 페이지 경로

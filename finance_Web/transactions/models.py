@@ -12,8 +12,8 @@ class Category(models.Model):
 
 class Transaction(models.Model):
     TRANSACTION_TYPES = (
-        ('income', 'Income'),
-        ('expense', 'Expense'),
+        ('income', '수입'),
+        ('expense', '지출'),
     )
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -24,4 +24,4 @@ class Transaction(models.Model):
     description = models.CharField(max_length=255, blank=True)
 
     def __str__(self):
-        return f"{self.type} - {delf.amount}"
+        return f"{self.type} - {self.amount}"
